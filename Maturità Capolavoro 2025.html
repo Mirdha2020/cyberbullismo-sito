@@ -1,0 +1,115 @@
+<!-- File: home.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop al Cyberbullismo</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    header {
+        background-color: #2c3e50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    main {
+        padding: 20px;
+    }
+    footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    form {
+        max-width: 400px;
+        margin: auto;
+    }
+    input, textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stop al Cyberbullismo</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cos'è</a></li>
+                <li><a href="#">Cosa fare</a></li>
+                <li><a href="#">Contattaci</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Benvenuto</h2>
+            <p>Questo sito nasce per sensibilizzare sul fenomeno del cyberbullismo, offrendo informazioni e supporto a chi ne è vittima.</p>
+        </section>
+
+        <section>
+            <h2>Cos'è il Cyberbullismo</h2>
+            <p>Il cyberbullismo è una forma di bullismo che avviene tramite l'uso di tecnologie digitali. Comporta insulti, minacce, diffusione di informazioni false o private, e può avere gravi conseguenze psicologiche sulle vittime.</p>
+        </section>
+
+        <section>
+            <h2>Cosa Fare</h2>
+            <ul>
+                <li>Parlane con un adulto di fiducia.</li>
+                <li>Non rispondere alle provocazioni.</li>
+                <li>Conserva le prove (screenshot, messaggi).</li>
+                <li>Segnala l'abuso alle piattaforme o alla polizia postale.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contattaci</h2>
+            <form action="#" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br>
+                <label for="messaggio">Messaggio:</label><br>
+                <textarea id="messaggio" name="messaggio" rows="5" cols="30" required></textarea><br>
+                <input type="submit" value="Invia">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Progetto di Maturità - Istituto Tecnico Informatica</p>
+    </footer>
+</body>
+</html>
+
+<!-- File: invia.php -->
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = htmlspecialchars($_POST["nome"]);
+    $messaggio = htmlspecialchars($_POST["messaggio"]);
+    echo "<h1>Grazie, $nome</h1>";
+    echo "<p>Il tuo messaggio è stato ricevuto:</p>";
+    echo "<blockquote>$messaggio</blockquote>";
+}
+?>
